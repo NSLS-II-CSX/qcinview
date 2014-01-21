@@ -1,0 +1,23 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2014-01-20T07:32:05
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = qcinview
+TEMPLATE = app
+
+LIBS    += -L/usr/local/lib -lcin
+
+SOURCES += main.cpp\
+        mainwindow.cpp \
+    GetImageThread.cpp
+
+HEADERS  += mainwindow.h \
+    GetImageThread.h
+
+FORMS    += mainwindow.ui
