@@ -9,7 +9,7 @@
 
 GetImage::GetImage(){
     cin_init_data_port(&data_port, NULL, 0, NULL, 0, 0);
-    cin_data_init(1000, 20000, 0);
+    cin_data_init(1000, 200, 0);
 
     QVector<QRgb> colormap(256);
 
