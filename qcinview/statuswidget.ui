@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StatusWidget</class>
+ <widget class="QDockWidget" name="StatusWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>262</width>
+    <height>305</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DockWidget</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>241</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Packet processing Status</string>
+    </property>
+    <widget class="QLabel" name="frameNumberLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="framerateLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="droppedPacketsLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="frameFifoBar">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="imageFifoBar">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="packetFifoBar">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
