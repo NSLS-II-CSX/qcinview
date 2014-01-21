@@ -15,9 +15,12 @@ LIBS    += -L/usr/local/lib -lcin
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    GetImageThread.cpp
+    GetImageThread.cpp \
+    statuswidget.cpp
 
 HEADERS  += mainwindow.h \
-    GetImageThread.h
+    GetImageThread.h \
+    statuswidget.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    statuswidget.ui
