@@ -7,6 +7,7 @@
 #include <QScrollArea>
 #include <QLabel>
 #include "GetImageThread.h"
+#include "statuswidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,8 +26,10 @@ public slots:
 private:
     Ui::MainWindow *ui;
     GetImageController *getImageThread;
+    StatusWidget *statusWidget;
     QScrollArea *scrollArea;
     QLabel *imageLabel;
+    QTimer *statusTimer;
 };
 
 #endif // MAINWINDOW_H
