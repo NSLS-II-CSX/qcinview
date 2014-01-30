@@ -50,4 +50,6 @@ MainWindow::~MainWindow()
 {
     delete getImageThread;
     delete ui;
+    cin_data_stop_threads();
+    cin_data_wait_for_threads();
 }
