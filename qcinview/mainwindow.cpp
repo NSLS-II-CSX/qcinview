@@ -2,6 +2,7 @@
 #include <QImage>
 #include <QScrollArea>
 #include <QPalette>
+#include <QDateTime>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "GetImageThread.h"
@@ -29,19 +30,20 @@ MainWindow::MainWindow(QWidget *parent) :
 
     statusTimer = new QTimer();
 
-    connect(getImageThread, SIGNAL(newImage(QImage, int)), this, SLOT(updateImage(QImage, int)));
+    connect(getImageThread, SIGNAL(newImage(QImage, int, QDateTime)), 
+            this, SLOT(updateImage(QImage, int, QDateTime)));
     connect(statusTimer, SIGNAL(timeout()), statusWidget, SLOT(updateStatus()));
 
-    statusTimer->start(500);
+    statusTimer->start(250);
 
     statusBar()->showMessage(tr("Ready"));
 
 }
 
-void MainWindow::updateImage(QImage image, int imageNumber){
+void MainWindow::updateImage(QImage image, int imageNumber, QDateTime timestamp){
     imageLabel->setPixmap(QPixmap::fromImage(image));
     imageLabel->update();
-    statusBar()->showMessage(QString("Displaying image %1").arg(imageNumber));
+    statusBar()->showMessage(QString("Displaying image %1 arrived at %2").arg(imageNumber).arg(timestamp.toString("dd:MM:yyyy hh:mm:ss.zzz")));
 }
 
 MainWindow::~MainWindow()

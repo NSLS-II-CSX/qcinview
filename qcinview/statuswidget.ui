@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>262</width>
-    <height>305</height>
+    <width>260</width>
+    <height>300</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>260</width>
+    <height>300</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>DockWidget</string>
@@ -29,7 +41,7 @@
     <widget class="QLabel" name="frameNumberLabel">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>130</x>
        <y>30</y>
        <width>111</width>
        <height>21</height>
@@ -42,7 +54,7 @@
     <widget class="QLabel" name="framerateLabel">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>130</x>
        <y>50</y>
        <width>111</width>
        <height>21</height>
@@ -55,7 +67,7 @@
     <widget class="QLabel" name="droppedPacketsLabel">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>130</x>
        <y>70</y>
        <width>111</width>
        <height>21</height>
@@ -68,9 +80,9 @@
     <widget class="QProgressBar" name="frameFifoBar">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>117</x>
        <y>130</y>
-       <width>118</width>
+       <width>81</width>
        <height>23</height>
       </rect>
      </property>
@@ -81,9 +93,9 @@
     <widget class="QProgressBar" name="imageFifoBar">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>117</x>
        <y>160</y>
-       <width>118</width>
+       <width>81</width>
        <height>23</height>
       </rect>
      </property>
@@ -94,14 +106,92 @@
     <widget class="QProgressBar" name="packetFifoBar">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>117</x>
        <y>100</y>
-       <width>118</width>
+       <width>81</width>
        <height>23</height>
       </rect>
      </property>
      <property name="value">
       <number>24</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>LastFrame</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Frame-rate</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Dropped Pack.</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Packet Buf.</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Frame Buf.</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Image Buf.</string>
      </property>
     </widget>
    </widget>

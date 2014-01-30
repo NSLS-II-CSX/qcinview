@@ -6,6 +6,7 @@
 #include <QImage>
 #include <QScrollArea>
 #include <QLabel>
+#include <QDateTime>
 #include "GetImageThread.h"
 #include "statuswidget.h"
 
@@ -21,7 +22,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 public slots:
-    void updateImage(QImage image, int imageNumber);
+    void updateImage(QImage image, int imageNumber, QDateTime timestamp);
 
 private:
     Ui::MainWindow *ui;

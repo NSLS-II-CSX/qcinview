@@ -9,6 +9,7 @@
 #include <QImage>
 #include <QRgb>
 #include <QVector>
+#include <QDateTime>
 
 #include "cin.h"
 
@@ -29,7 +30,7 @@ class GetImage : public QObject
  public slots:
      void fetchImage(void);
  signals:
-     void imageReady(QImage image, int imageNumber);
+     void imageReady(QImage image, int imageNumber, QDateTime timestamp);
  };
 
 class GetImageController : public QObject
@@ -41,7 +42,8 @@ class GetImageController : public QObject
         GetImage *getImage = new GetImage();
         getImage->moveToThread(&getImageThread);
         connect(&getImageThread, SIGNAL(finished()), getImage, SLOT(deleteLater()));
-        connect(getImage, SIGNAL(imageReady(QImage, int)), this, SLOT(updateImage(QImage, int)));
+        connect(getImage, SIGNAL(imageReady(QImage, int, QDateTime)), 
+                this, SLOT(updateImage(QImage, int, QDateTime)));
         connect(&timer, SIGNAL(timeout()), getImage, SLOT(fetchImage(void)));
         getImageThread.start();
 
@@ -55,11 +57,11 @@ class GetImageController : public QObject
      }
      QTimer timer;
  public slots:
-     void updateImage(QImage image, int imageNumber){
-         emit newImage(image, imageNumber);
+     void updateImage(QImage image, int imageNumber, QDateTime timestamp){
+         emit newImage(image, imageNumber, timestamp);
      }
  signals:
-     void newImage(QImage image, int imageNumber);
+     void newImage(QImage image, int imageNumber, QDateTime timestamp);
  };
 
 #endif // GETIMAGETHREAD_H

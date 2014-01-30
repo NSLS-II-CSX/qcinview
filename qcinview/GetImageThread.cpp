@@ -4,12 +4,13 @@
 #include <QImage>
 #include <QRgb>
 #include <QVector>
+#include <QDateTime>
 #include "GetImageThread.h"
 #include "cin.h"
 
 GetImage::GetImage(){
     cin_init_data_port(&data_port, NULL, 0, NULL, 0, 0);
-    cin_data_init(1000, 200, 0);
+    cin_data_init(CIN_DATA_MODE_DBL_BUFFER, 20000, 50);
 
     QVector<QRgb> colormap(256);
 
@@ -36,6 +37,10 @@ void GetImage::fetchImage(void){
 
     frame = cin_data_get_buffered_frame();
     int frameNo = (int)frame->number;
+    QDateTime frameTimestamp;
+    qint64 msecs = (frame->timestamp.tv_sec * 1000);
+    msecs += (frame->timestamp.tv_usec / 1000);
+    frameTimestamp.setMSecsSinceEpoch(msecs);
 
     if(frameNo == lastFrameNo){
         // Ok so we should just release and go!
@@ -50,7 +55,7 @@ void GetImage::fetchImage(void){
     for(int i = 0;i<CIN_DATA_FRAME_HEIGHT;i++){
         line = image.scanLine(i);
         for(int j = 0;j<CIN_DATA_FRAME_WIDTH;j++){
-            line[j] = (uchar)(*frame_p >> 8);
+            line[j] = (uchar)(((*frame_p)) >> 8);
             frame_p++;
         }
     }
@@ -59,5 +64,5 @@ void GetImage::fetchImage(void){
 
     lastFrameNo = frameNo;
 
-    emit imageReady(image, frameNo);
+    emit imageReady(image, frameNo, frameTimestamp);
 }
