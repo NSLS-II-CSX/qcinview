@@ -9,9 +9,6 @@
 #include "cin.h"
 
 GetImage::GetImage(){
-    cin_init_data_port(&data_port, NULL, 0, NULL, 0, 0);
-    cin_data_init(CIN_DATA_MODE_DBL_BUFFER, 20000, 50);
-
     QVector<QRgb> colormap(256);
 
     // Make colormap for QImage

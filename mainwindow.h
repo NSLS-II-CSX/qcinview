@@ -9,6 +9,7 @@
 #include <QDateTime>
 #include "GetImageThread.h"
 #include "statuswidget.h"
+#include "cin.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    struct cin_port data_port;
     GetImageController *getImageThread;
     StatusWidget *statusWidget;
     QScrollArea *scrollArea;

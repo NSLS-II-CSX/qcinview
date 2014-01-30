@@ -17,11 +17,13 @@ INCLUDEPATH += ../libcin/include
 SOURCES += main.cpp\
         mainwindow.cpp \
     GetImageThread.cpp \
-    statuswidget.cpp
+    statuswidget.cpp \
+    SaveImageThread.cpp
 
 HEADERS  += mainwindow.h \
     GetImageThread.h \
-    statuswidget.h
+    statuswidget.h \
+    SaveImageThread.h
 
 FORMS    += mainwindow.ui \
     statuswidget.ui

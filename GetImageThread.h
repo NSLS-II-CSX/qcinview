@@ -23,7 +23,6 @@ class GetImage : public QObject
  public:
      GetImage();
  private:
-     cin_port_t data_port;
      cin_data_frame_t *frame;
      QVector<QRgb> greyColormap;
      int lastFrameNo;

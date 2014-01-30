@@ -7,12 +7,16 @@
 #include "ui_mainwindow.h"
 #include "GetImageThread.h"
 #include "statuswidget.h"
+#include "SaveImageThread.h"
 #include <cin.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    cin_init_data_port(&data_port, NULL, 0, NULL, 0, 0);
+    cin_data_init(CIN_DATA_MODE_DBL_BUFFER_COPY | CIN_DATA_MODE_PUSH_PULL, 20000, 50);
+
     ui->setupUi(this);
 
     scrollArea = new QScrollArea(this);
@@ -25,6 +29,12 @@ MainWindow::MainWindow(QWidget *parent) :
     statusWidget = new StatusWidget(this);
     statusWidget->setAllowedAreas(Qt::RightDockWidgetArea);
     addDockWidget(Qt::RightDockWidgetArea, statusWidget);
+
+    QThread *thread = new QThread;
+    SaveImageThread *saveImageThread = new SaveImageThread;
+    saveImageThread->moveToThread(thread);
+    thread->start();
+    QMetaObject::invokeMethod(saveImageThread, "doWork");
 
     getImageThread = new GetImageController();
 
