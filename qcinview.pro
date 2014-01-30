@@ -11,8 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = qcinview
 TEMPLATE = app
 
-LIBS    += -L../../libcin/lib -lcin
-INCLUDEPATH += ../../libcin/include 
+LIBS    += -L../libcin/lib -lcin
+INCLUDEPATH += ../libcin/include 
 
 SOURCES += main.cpp\
         mainwindow.cpp \
