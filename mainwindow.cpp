@@ -15,7 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     cin_init_data_port(&data_port, NULL, 0, NULL, 0, 0);
-    cin_data_init(CIN_DATA_MODE_DBL_BUFFER_COPY | CIN_DATA_MODE_PUSH_PULL, 20000, 50);
+    cin_data_init(CIN_DATA_MODE_DBL_BUFFER_COPY | CIN_DATA_MODE_PUSH_PULL,
+                  2000000, 1000000);
 
     ui->setupUi(this);
 

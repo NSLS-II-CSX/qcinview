@@ -80,7 +80,7 @@
     <widget class="QProgressBar" name="frameFifoBar">
      <property name="geometry">
       <rect>
-       <x>117</x>
+       <x>80</x>
        <y>130</y>
        <width>81</width>
        <height>23</height>
@@ -93,7 +93,7 @@
     <widget class="QProgressBar" name="imageFifoBar">
      <property name="geometry">
       <rect>
-       <x>117</x>
+       <x>80</x>
        <y>160</y>
        <width>81</width>
        <height>23</height>
@@ -106,7 +106,7 @@
     <widget class="QProgressBar" name="packetFifoBar">
      <property name="geometry">
       <rect>
-       <x>117</x>
+       <x>80</x>
        <y>100</y>
        <width>81</width>
        <height>23</height>
@@ -160,12 +160,12 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>91</width>
+       <width>51</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Packet Buf.</string>
+      <string>Packet</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -178,7 +178,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Frame Buf.</string>
+      <string>Frame.</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -186,12 +186,51 @@
       <rect>
        <x>10</x>
        <y>160</y>
-       <width>91</width>
+       <width>51</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Image Buf.</string>
+      <string>Image</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="packetOverruns">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>100</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="frameOverruns">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>130</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="imageOverruns">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>160</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
      </property>
     </widget>
    </widget>

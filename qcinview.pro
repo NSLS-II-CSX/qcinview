@@ -13,6 +13,8 @@ TEMPLATE = app
 
 LIBS    += -L../libcin/lib -lcin
 INCLUDEPATH += ../libcin/include 
+PRE_TARGETDEPS += ../libcin/lib/libcin.a
+
 
 SOURCES += main.cpp\
         mainwindow.cpp \

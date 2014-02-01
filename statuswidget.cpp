@@ -22,4 +22,7 @@ void StatusWidget::updateStatus(void){
     ui->packetFifoBar->setValue(stats.packet_percent_full);
     ui->frameFifoBar->setValue(stats.frame_percent_full);
     ui->imageFifoBar->setValue(stats.image_percent_full);
+    ui->packetOverruns->setText(QString("%1").arg(stats.packet_overruns));
+    ui->frameOverruns->setText(QString("%1").arg(stats.frame_overruns));
+    ui->imageOverruns->setText(QString("%1").arg(stats.image_overruns));
 }
