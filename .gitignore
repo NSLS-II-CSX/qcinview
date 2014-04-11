@@ -1,3 +1,5 @@
+qcinview
+
 # C++ objects and libs
 
 *.slo
@@ -17,4 +19,5 @@
 moc_*.cpp
 qrc_*.cpp
 Makefile
+ui_*.h
 *-build-*
