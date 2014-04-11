@@ -19,13 +19,11 @@ PRE_TARGETDEPS += ../libcin/lib/libcin.a
 SOURCES += main.cpp\
         mainwindow.cpp \
     GetImageThread.cpp \
-    statuswidget.cpp \
-    SaveImageThread.cpp
+    statuswidget.cpp 
 
 HEADERS  += mainwindow.h \
     GetImageThread.h \
-    statuswidget.h \
-    SaveImageThread.h
+    statuswidget.h 
 
 FORMS    += mainwindow.ui \
     statuswidget.ui

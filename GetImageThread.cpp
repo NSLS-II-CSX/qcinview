@@ -28,7 +28,7 @@ void GetImage::fetchImage(void){
 
     // Make a QImage
 
-    QImage image = QImage(CIN_DATA_FRAME_WIDTH, CIN_DATA_FRAME_HEIGHT,
+    QImage image = QImage(CIN_DATA_FRAME_WIDTH * 1.2, CIN_DATA_FRAME_HEIGHT,
                           QImage::Format_Indexed8);
     image.setColorTable(greyColormap);
 
@@ -45,13 +45,15 @@ void GetImage::fetchImage(void){
         return;
     }
 
+    qDebug() << "Image x = " << frame->size_x << " y = " << frame->size_y;
+
     // Copy this to an 8 bit QImage
 
     uchar *line;
     uint16_t *frame_p = frame->data;
-    for(int i = 0;i<CIN_DATA_FRAME_HEIGHT;i++){
+    for(int i = 0;i<frame->size_y;i++){
         line = image.scanLine(i);
-        for(int j = 0;j<CIN_DATA_FRAME_WIDTH;j++){
+        for(int j = 0;j<frame->size_x;j++){
             line[j] = (uchar)(((*frame_p)) >> 8);
             frame_p++;
         }

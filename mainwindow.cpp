@@ -14,9 +14,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    cin_init_data_port(&data_port, NULL, 0, NULL, 0, 0);
-    cin_data_init(CIN_DATA_MODE_DBL_BUFFER_COPY | CIN_DATA_MODE_PUSH_PULL,
-                  2000000, 1000000);
+    cin_data_init_port(&data_port, "0.0.0.0", 0, NULL, 0, 0);
+    cin_data_init(CIN_DATA_MODE_DBL_BUFFER, 20000, 10000,
+                  NULL,NULL, NULL);
 
     ui->setupUi(this);
 
@@ -31,11 +31,11 @@ MainWindow::MainWindow(QWidget *parent) :
     statusWidget->setAllowedAreas(Qt::RightDockWidgetArea);
     addDockWidget(Qt::RightDockWidgetArea, statusWidget);
 
-    QThread *thread = new QThread;
-    SaveImageThread *saveImageThread = new SaveImageThread;
-    saveImageThread->moveToThread(thread);
-    thread->start();
-    QMetaObject::invokeMethod(saveImageThread, "doWork");
+    //QThread *thread = new QThread;
+    //SaveImageThread *saveImageThread = new SaveImageThread;
+    //saveImageThread->moveToThread(thread);
+    //thread->start();
+    //QMetaObject::invokeMethod(saveImageThread, "doWork");
 
     getImageThread = new GetImageController();
 
